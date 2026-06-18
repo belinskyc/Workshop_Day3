@@ -23,7 +23,6 @@ windDirOrdered = factor(weatherData$windDir,
                                  "South", "West"));
 
 #### A Reordering the Boxplot ####
-### Nothing to say here ### 
 plot2 = ggplot(data=weatherData) +
   geom_boxplot(mapping=aes(x=windDirOrdered, y=changeMaxTemp)) +
   theme_bw() +
@@ -48,10 +47,6 @@ plot4 = ggplot(data=weatherData) +
        x = "Wind Direction",
        y = "Change in Temperature (\u00B0F)");
 plot(plot4);
-
-#### Part 5: Map color to windSpeed(s)
-# windSpeedOrdered = factor(weatherData$windSpeedLevel,
-#                         levels=c("Low", "Medium", "High"));
 
 # A Boxplot with a mapping ####
 plot5 = ggplot(data=weatherData) +
@@ -147,22 +142,6 @@ plot(plot10);
 windLabels = c(Low = "Light Winds",
                Medium = "Medium Winds",
                High = "Strong Winds");
-
-plot11 = ggplot(data=weatherData) +
-  geom_boxplot(mapping=aes(x=windDirOrdered, y=changeMaxTemp),
-               na.rm = TRUE,   # gets rid of warning about non-finite values
-               color = boxColors,
-               fill = "grey50",
-               outlier.color = rgb(red=0, green=0.3, blue=0),
-               outlier.shape = "\u053e") +
-  theme_bw() +
-  facet_grid( cols=vars(windSpeedLevel),
-              labeller=as_labeller(windLabels)) +
-  labs(title = "Change in Temperature vs. Wind Direction",
-       subtitle = "Lansing, Michigan: 2016",
-       x = "Wind Direction",
-       y = "Degrees (Fahrenheit)");
-plot(plot11);
 
 #### Extension -- Error bars  ####
 plotA = ggplot(data=weatherData) +          

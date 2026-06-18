@@ -6,7 +6,7 @@ weatherData = read.csv(file="data/weatherData.csv");
 #### Labels for the facets of the plot
 windLabels = c(Low = "Light Winds",
                Medium = "Medium Winds",
-               High = "Strong Winds");
+               High = "High Winds");
 
 #### Boxplots of Change in Temperature vs. Wind Direction 
 #           at different wind speeds
@@ -17,13 +17,12 @@ thePlot = ggplot(data=weatherData) +
                        "green", rep("black", 3),
                        "orange", rep("black", 3)),
                fill=c(rep(NA, 8), rep("red", 3), NA)) +
-  theme_bw() +
   facet_grid(rows=.~factor(windSpeedLevel,
                              levels=c("Low", "Medium", "High")),
              labeller=as_labeller(windLabels)) +
   scale_x_discrete(limits=c("North", "East", "South", "West")) +
   labs(title = "Change in Temperature vs. Wind Direction",
-       subtitle = "Lansing, Michigan: 2016",
+       subtitle = "Lansing, MI: 2016",
        x = "Wind Direction",
        y = "Degrees (Fahrenheit)");
 plot(thePlot);

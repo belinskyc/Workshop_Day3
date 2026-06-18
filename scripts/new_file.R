@@ -1,5 +1,6 @@
+# small edits
 # just a comment
-cat("Nothing to see here")
-cat("\nReally")
+cat("There is nothing to see here")
+cat("\n ... ")
 
 # Just another comment
