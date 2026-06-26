@@ -15,7 +15,7 @@ thePlot = ggplot(data=weatherData) +
                na.rm=TRUE,
                color=c("brown", rep("black", 3),
                        "green", rep("black", 3),
-                       "orange", rep("black", 3)),
+                       "purple", rep("black", 3)),
                fill=c(rep(NA, 8), rep("red", 3), NA)) +
   facet_grid(rows=.~factor(windSpeedLevel,
                              levels=c("Low", "Medium", "High")),
