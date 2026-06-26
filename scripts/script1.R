@@ -13,7 +13,7 @@ windLabels = c(Low = "Light Winds",
 thePlot = ggplot(data=weatherData) +
   geom_boxplot(mapping=aes(x=windDir, y=changeMaxTemp), 
                na.rm=TRUE,
-               color=c("blue", rep("black", 3),
+               color=c("brown", rep("black", 3),
                        "green", rep("black", 3),
                        "orange", rep("black", 3)),
                fill=c(rep(NA, 8), rep("red", 3), NA)) +
